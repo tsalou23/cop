@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --copper: #B87333;
+    --desert-sand: #EDC9AF;
+    --burnt-orange: #CC5500;
+    --rust: #9E4F27;
+    --charcoal: #2E2E2E;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-charcoal text-desert-sand font-inter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+}
+
+@layer components {
+  .copper-glow {
+    @apply transition-all duration-300;
+    text-shadow: 0 0 10px rgba(184, 115, 51, 0.5);
+  }
+
+  .copper-glow:hover {
+    text-shadow: 0 0 20px rgba(184, 115, 51, 0.8);
+  }
+
+  .wasteland-button {
+    @apply bg-copper px-8 py-3 rounded-md font-orbitron text-charcoal 
+           hover:bg-opacity-90 transition-all duration-300 
+           shadow-lg hover:shadow-copper/50;
+  }
+
+  .section-title {
+    @apply text-4xl font-orbitron font-bold text-copper mb-8;
+  }
+}
+
+.parallax-bg {
+  @apply fixed top-0 left-0 w-full h-full -z-10;
+  background-image: url('/image_ultra_quality.png'); 
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+ 
+}
+
+.content-overlay {
+  @apply relative z-10;
+  background: linear-gradient(to bottom, 
+              rgba(46, 46, 46, 0.8), 
+              rgba(46, 46, 46, 0.95));
+}
