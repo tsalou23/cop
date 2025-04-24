@@ -126,6 +126,7 @@ const Navbar = () => {
     </nav>
   );
 };
+export default Navbar;
 // minimal navbar
 // export default Navbar;
 
